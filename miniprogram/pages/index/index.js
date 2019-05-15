@@ -9,7 +9,67 @@ Page({
     takeSession: false,
     requestResult: '',
     latitude: 0,
-    longitude: 0
+    longitude: 0,
+    imgUrls: [
+      'https://via.placeholder.com/200',
+      'https://via.placeholder.com/200',
+      'https://via.placeholder.com/200'
+    ],
+    indicatorDots: true,
+    autoplay: true,
+    interval: 5000,
+    duration: 5000,
+    positionInfo: {name: '深圳'},
+    navList: [{
+        label: '打卡',
+        icon: 'https://via.placeholder.com/30'
+      }, {
+        label: '资料',
+        icon: 'https://via.placeholder.com/30'
+      }, {
+        label: '团队介绍',
+        icon: 'https://via.placeholder.com/30'
+      }, {
+        label: '课程推荐',
+        icon: 'https://via.placeholder.com/30'
+      }, {
+        label: '场馆信息',
+        icon: 'https://via.placeholder.com/30'
+      }, {
+        label: '照片墙',
+        icon: 'https://via.placeholder.com/30'
+      }],
+      newsList: [
+        {
+          title:'从零开始，走进瑜伽',
+          time:'2019/5/15'
+        },
+        {
+          title: 'xxxxxxxxxxx',
+          time: '2019/5/15'
+        }, 
+        {
+          title: 'xxxxxxxxxxxxxxxx',
+          time: '2019/5/15'
+        }],
+      courseList: [
+        {
+          image: {
+            imageUrl: '../../images/code-db-inc-dec.png',
+            nums: 1
+          },
+          title: 'xxxxxxxxx',
+          stars: 1,
+          info: '调整肩颈疼痛、不适，改善圆肩驼背'
+        }, {
+          image: {
+            imageUrl: '../../images/code-db-inc-dec.png'
+          },
+          title: 'xxxxxxxxx',
+          stars: 1,
+          info: '调整肩颈疼痛、不适，改善圆肩驼背'
+        }
+      ]
   },
 
   onLoad: function() {
@@ -21,7 +81,7 @@ Page({
     }
 
     // 获取用户信息
-    wx.getSetting({
+    /**wx.getSetting({
       success: res => {
         if (res.authSetting['scope.userInfo']) {
           // 已经授权，可以直接调用 getUserInfo 获取头像昵称，不会弹框
@@ -45,10 +105,10 @@ Page({
           })
         }
       }
-    })
+    })**/
   },
 
-  onGetUserInfo: function(e) {
+  /**onGetUserInfo: function(e) {
     if (!this.logged && e.detail.userInfo) {
       this.setData({
         logged: true,
@@ -57,16 +117,6 @@ Page({
       })
     }
   },
-
-  adLoad() {
-    console.log('Banner 广告加载成功')
-  },
-  adError(err) {
-    console.log('Banner 广告加载失败', err)
-  },
-  adClose() {
-    console.log('Banner 广告关闭')
-  }
 
   onGetOpenid: function() {
     // 调用云函数
@@ -137,6 +187,7 @@ Page({
         console.error(e)
       }
     })
-  },
+  }**/
 
+  
 })

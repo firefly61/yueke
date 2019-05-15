@@ -1,11 +1,72 @@
 <!--index.wxml-->
 <view class="container">
-  <ad
-    unit-id="xxxx"
-    bindload="adLoad"
-    binderror="adError"
-    bindclose="adClose"
-  ></ad>
+  <view class='section top-bar'>
+    <text class='position-text'>{{positionInfo.name}}</text><icon class="arrow-down"></icon>
+  </view>
+  <view class='section'>
+    <swiper class='carousel-box'
+      indicator-dots="{{indicatorDots}}" indicator-color="rgba(0, 0, 0, .1)" indicator-active-color="rgba(0, 0, 0, .3)"
+      autoplay="{{autoplay}}"
+      interval="{{interval}}"
+      duration="{{duration}}">
+      <block wx:for="{{imgUrls}}" wx:key="key">
+        <swiper-item>
+          <image src="{{item}}" class="slide-image" />
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+   <view class='section box'>
+    <ul class='nav'>
+      <li class='nav-item' wx:for="{{navList}}" wx:key>
+        <image class='nav-image' src='{{item.icon}}'></image>
+        <text class='nav-label'>{{item.label}}</text>
+      </li>
+    </ul>
+  </view>
+
+  <view class='section box'>
+    <h1 class='box-title'>为您推荐</h1>
+    <swiper autoplay vertical circular
+      interval="3000"
+      duration="1000" class='new-box'>
+      <block wx:for="{{newsList}}" wx:key="key">
+        <swiper-item class='news-item'>
+          <p>{{item.title}}<span>{{item.time}}</span></p>
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+
+  <view class='section box'>
+    <h1 class='box-title'>课程推荐</h1>
+    <ul class='course-list'>
+        <li class="course-item clearfix" wx:for="{{courseList}}">
+            <div class="img-box" slot="start">
+                <image class="img"
+                     src="{{item.image.imageUrl&&item.image.imageUrl!=='null'?item.image.imageUrl:''}}"
+                     alt="xxx"></image>
+                <span wx:if="{{item.image.nums}}"
+                      class="img-number">
+                    <i></i>
+                    {{item.image.nums}}
+                </span>
+            </div>
+            <div class="text-box">
+                <h2>
+                  {{item.title}}
+                </h2>
+                <p>
+                  难易：{{item.stars}}
+                </p>
+                <p class='info'>
+                    {{item.info}}
+                </p>
+            </div>
+        </li>
+    </ul>
+  </view>
+  
   <!-- 上传图片 
   <view class="uploader">
     <view class="uploader-text" bindtap="doUpload">

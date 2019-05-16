@@ -42,7 +42,7 @@
     <h1 class='box-title'>课程推荐</h1>
     <ul class='course-list'>
         <li class="course-item clearfix" wx:for="{{courseList}}">
-            <div class="img-box" slot="start">
+            <div class="img-box clearfix" slot="start">
                 <image class="img"
                      src="{{item.image.imageUrl&&item.image.imageUrl!=='null'?item.image.imageUrl:''}}"
                      alt="xxx"></image>
@@ -52,7 +52,7 @@
                     {{item.image.nums}}
                 </span>
             </div>
-            <div class="text-box">
+            <div class="text-box clearfix">
                 <h2>
                   {{item.title}}
                 </h2>
@@ -65,6 +65,14 @@
             </div>
         </li>
     </ul>
+  </view>
+  
+  <view class='section box' style='margin-bottom: 40rpx;'>
+    <h1 class='box-title'>联系我们</h1>
+    <a bindtap="call" class="call-box">
+      <span>立即咨询</span>
+      <i class="call-icon"></i>
+    </a>
   </view>
   
   <!-- 上传图片 

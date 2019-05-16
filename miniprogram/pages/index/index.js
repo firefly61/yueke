@@ -80,6 +80,12 @@ Page({
       return
     }
 
+    wx.getLocation({
+      success: function(res) {
+        console.log(res)
+      },
+    })
+
     // 获取用户信息
     /**wx.getSetting({
       success: res => {
@@ -93,20 +99,16 @@ Page({
               })
             }
           });
-          wx.getLocation({
-            type: 'wgs84',
-            success: res => {
-              console.log(res)
-              this.setData({
-                latitude: res.latitude,
-                longitude: res.longitude
-              })
-            }
-          })
         }
       }
     })**/
   },
+
+  call: function() {
+    wx.makePhoneCall({
+      phoneNumber: '13242416188',
+    });
+  }
 
   /**onGetUserInfo: function(e) {
     if (!this.logged && e.detail.userInfo) {

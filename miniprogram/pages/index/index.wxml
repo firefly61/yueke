@@ -69,6 +69,8 @@
   
   <view class='section box' style='margin-bottom: 40rpx;'>
     <h1 class='box-title'>联系我们</h1>
+    <view>颖</view>
+    <view>地址：</view>
     <a bindtap="call" class="call-box">
       <span>立即咨询</span>
       <i class="call-icon"></i>

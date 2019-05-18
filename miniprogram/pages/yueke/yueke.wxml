@@ -1,5 +1,14 @@
 <view class='container'>
-  <ul>
-    <li></li>
-  </ul>
+    <view class='course-list' wx:for="{{courseList}}" wx:key="{{item.index}}">
+      
+      <image class='photo' src="{{item.teacher.photo}}"></image>
+      <view class='content'>
+        <text class="course-name">{{item.courseName}}</text>
+        <view class="details">
+          <view>难度</view>
+          <view>教练  {{item.teacher.name}}</view>
+          <view>时间  {{item.time}}</view>
+        </view>
+      </view>
+    </view>
 </view>

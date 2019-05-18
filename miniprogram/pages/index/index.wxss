@@ -177,7 +177,7 @@ page {
   margin-top: 10rpx;
   font-size: 0.81rem;
   color: #fff;
-  background: #FF6314;
+  background: #EE5A24;
   padding: 10rpx;
   letter-spacing: 3rpx;
   box-shadow:0 1px 1px 1px rgba(0, 0, 0, .1);
